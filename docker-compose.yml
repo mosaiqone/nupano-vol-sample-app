@@ -1,0 +1,11 @@
+name: demo-app-vol-stack
+services:
+
+  demo-app-vol:
+    image: demo-app-vol-image:1.0.0
+    volumes:
+      - app_config:/app_config                        # config data
+
+volumes:
+  app_config:
+  machine_config:

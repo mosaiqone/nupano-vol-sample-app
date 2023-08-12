@@ -1,6 +1,6 @@
 #https://docs.docker.com/engine/reference/builder/
-#docker build --rm -t demo-app-image:1.0.0 .
-#docker run --name demo-app-container demo-app-image:1.0.0 -d
+#docker build --rm -t demo-app-vol-image:1.0.0 .
+#docker run --name demo-app-vol-container demo-app-vol-image:1.0.0 -d
 
 
 FROM python:3-alpine

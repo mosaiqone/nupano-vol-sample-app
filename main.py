@@ -1,15 +1,34 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #python main.py
+#py main.py
+
 import asyncio
 
-CYCLE_TIME_APP = 3.0
+CYCLE_TIME_APP = 1.0
+
+#read file
+try:
+    #Prio 1: machine config
+    configFile = open('machine_config/machine_config.txt','r')
+    text_to_print = "Using machine configuration: " + configFile.read()
+
+except:
+    try: 
+        #Prio 2: default app config
+        configFile = open('app_config/app_config.txt','r')
+        text_to_print = "Using app configuration: " + configFile.read()
+
+    except:
+        #Prio 3: fall back
+        text_to_print = "config.txt not found :-("
+
 
 async def cyclic(cycleTime):
     print("App started")
     while True:
         await asyncio.sleep(cycleTime)
-        print("One Mississipi");
+        print(text_to_print);
         
 
 """ CYCLIC SYSTEM """
